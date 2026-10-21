@@ -43,8 +43,11 @@ AutoBot 不依赖任何游戏 API 或引擎修改，而是以"外部观察者"�
 ## 📸 运行效果
 
 <p>
-<img src="assets/images/yolo_detection.png" width="420" alt="YOLO 人物检测效果"/>
-<img src="assets/images/landmark_detection.png" width="420" alt="场景地标识别效果"/>
+<img src="assets/images/person_detection.png" width="360" alt="YOLO 人物检测：ct_body/ct_head/t_body/t_head 带置信度"/>
+<img src="assets/images/scene_detection.png" width="480" alt="YOLO 场景地标识别：t_wall_A/t_flower/t_door 等 10 类"/>
+</p>
+<p align="center">
+<img src="assets/images/minimap_navigation.png" width="560" alt="A* 路径规划效果：游戏画面与小地图规划路线"/>
 </p>
 <p>
 <img src="assets/images/ct_to_a_path.png" width="280" alt="CT 出生点至 A 点 A* 路径规划"/>
@@ -58,15 +61,21 @@ AutoBot 不依赖任何游戏 API 或引擎修改，而是以"外部观察者"�
 
 ## 🏗 系统架构
 
-<img src="assets/images/system_architecture.png" width="560" alt="系统总体架构：感知层 → 决策层 → 执行层"/>
+<img src="assets/images/system_architecture.png" width="600" alt="系统总体架构：环境感知层 → 自主决策层 → 运动控制层 → 执行层"/>
 
-三层架构，每层可独立替换：
+四层架构（环境感知 → 自主决策 → 运动控制 → 执行），各层可独立替换：
 
 | 层 | 模块 | 说明 |
 |---|---|---|
-| **感知层** | `player_locator` / `role_detector` / `place_detector` / `minimap_matcher` | 截屏 → 自身位置 → 阵营 → 场景理解 |
-| **决策层** | `navigator` / `auto_navigation` / `anti_stuck` | A\* 寻路、waypoint 跟随、卡死恢复 |
-| **执行层** | `arduino_control` → Arduino 固件 | 串口协议 → USB HID 键鼠模拟 |
+| **环境感知层** | `player_locator` / `role_detector` / `place_detector` / `minimap_matcher` | 截屏 → 自身位置 → 阵营 → 场景理解 |
+| **自主决策层** | `navigator` / `auto_navigation` / `anti_stuck` | A\* 寻路、waypoint 跟随、卡死恢复 |
+| **运动控制 + 执行层** | `arduino_control` → Arduino 固件 | 串口协议 → USB HID 键鼠模拟 |
+
+执行侧的硬件链路：
+
+<p>
+<img src="assets/images/hardware_diagram.png" width="480" alt="硬件结构：上位机 → USB 串口 → Arduino Leonardo → HID 键鼠"/>
+</p>
 
 ### 主循环工作流
 
