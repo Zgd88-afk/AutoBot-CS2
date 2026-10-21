@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+env/
+build/
+dist/
+
+# 运行时输出（调试截图等）
+runs/
+
+# YOLO 训练工程（体积过大，不入库）
+models/data/
+*.pt.tmp
+
+# 备份与压缩包（历史遗留，与运行无关）
+*.rar
+*.zip
+*.7z
+
+# IDE / AI 助手会话记录
+.idea/
+.vscode/
+.workbuddy/
+.zcode/
+.cursor/
+CLAUDE.md
+AGENTS.md
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# 不入库的私密文档
+docs/MRD_AutoBot.pdf
+docs/MRD_AutoBot.html

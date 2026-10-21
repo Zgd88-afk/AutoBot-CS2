@@ -1,0 +1,45 @@
+{
+  "roi_left": 26,
+  "roi_top": 59,
+  "roi_width": 275,
+  "roi_height": 272,
+  "map_x_min": 0,
+  "map_y_min": 0,
+  "map_x_max": 1000,
+  "map_y_max": 1000,
+  "calibration_points": [
+    {
+      "name": "ct_spwan",
+      "minimap": [
+        107,
+        150
+      ],
+      "map": [
+        291,
+        676
+      ]
+    },
+    {
+      "name": "ct_pavilion",
+      "minimap": [
+        180,
+        209
+      ],
+      "map": [
+        452,
+        796
+      ]
+    },
+    {
+      "name": "A_site",
+      "minimap": [
+        217,
+        188
+      ],
+      "map": [
+        537,
+        756
+      ]
+    }
+  ]
+}
